@@ -41,8 +41,8 @@ public class WordCount {
   public static void main(String[] args) {
       
 	  args=new String[2];
-      String inputFile="/home/prakash/workspaces/First/spark-example/src/main/java/com/pd/WordCount.java";
-	  String outputFolder="/home/prakash/workspaces/First/spark-example/output";
+      String inputFile="/home/prakash/workspaces/First/spark-first-example/LICENSE";
+	  String outputFolder="/home/prakash/workspaces/First/output";
       /*System.err.println("Please provide the input file full path as argument");
       System.exit(0);*/
 
