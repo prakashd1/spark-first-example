@@ -1,10 +1,13 @@
 # spark-first-example
-This program gives very basic example of Apache Spark on local machine which you can execute without hadoop.
+This program runs very basic example of Apache Spark on local machine and counts words in the given file.
+Output of the program is stored in the directory provided.
 
-Pre-req 
-Please check paths present in the file WordCount.java
+Pre-requisite:
+
+Please check paths present in the WordCount.java file. Modify paths if necessary and if you dont want to provide them on command line.
 String inputFile="/home/prakash/workspaces/First/spark-first-example/LICENSE";
- String outputFolder="/home/prakash/workspaces/First/output";
+String outputFolder="/home/prakash/workspaces/First/output";
+
 
 How to run this program 
 mvn clean package exec:java [inputFile] [outputFolder]
