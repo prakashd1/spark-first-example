@@ -39,22 +39,29 @@ public class WordCount {
       };
 
   public static void main(String[] args) {
-      
-	  args=new String[2];
+
       String inputFile="/home/prakash/workspaces/First/spark-first-example/LICENSE";
-	  String outputFolder="/home/prakash/workspaces/First/output";
-      /*System.err.println("Please provide the input file full path as argument");
-      System.exit(0);*/
+      String outputFolder="/home/prakash/workspaces/First/output";
+
+      if(args.length < 2){
+          System.out.println("Argument length is greater than 2,  henceassuming default paths");
+          args=new String[2];
+          args[0]=inputFile;
+          args[1]=outputFolder;
+      }
+
+
+
 
     SparkConf conf = new SparkConf().setAppName("com.pd.WordCount").setMaster("local");
     JavaSparkContext context = new JavaSparkContext(conf);
 
-    JavaRDD<String> file = context.textFile(inputFile);
+    JavaRDD<String> file = context.textFile(args[0]);
     JavaRDD<String> words = file.flatMap(WORDS_EXTRACTOR);
     JavaPairRDD<String, Integer> pairs = words.mapToPair(WORDS_MAPPER);
     JavaPairRDD<String, Integer> counter = pairs.reduceByKey(WORDS_REDUCER);
 
     
-    counter.saveAsTextFile(outputFolder);
+    counter.saveAsTextFile(args[1]);
   }
 }

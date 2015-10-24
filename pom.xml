@@ -18,11 +18,28 @@
             <artifactId>spark-core_2.10</artifactId>
             <version>1.2.0</version>
         </dependency>
-  
+
+      <dependency>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>exec-maven-plugin</artifactId>
+          <version>1.4.0</version>
+      </dependency>
+
   </dependencies>
   
   
   <build>
+      <plugins>
+          <plugin>
+              <groupId>org.codehaus.mojo</groupId>
+              <artifactId>exec-maven-plugin</artifactId>
+              <version>1.4.0</version>
+              <configuration>
+                  <mainClass>com.pd.WordCount</mainClass>
+              </configuration>
+          </plugin>
+
+      </plugins>
   
   </build>
   
