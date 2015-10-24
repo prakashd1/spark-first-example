@@ -14,5 +14,5 @@ String outputFolder="/home/prakash/workspaces/First/output";
 How to run this program 
 mvn clean package exec:java [inputFile] [outputFolder]
 
-Once program successfully executes, you will file named part0000 in output folder specified.
+Once program successfully executes, you should be able to see file named part0000 in output folder specified.
 This file will contain the word count of words in that file.
